@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">smart_home_aa</string>
+    <string name="chart_title1">空氣品質與風扇轉速</string>
+    <string name="chart_title2">溫度與濕度</string>
+    <string name="fan_auto">風扇狀態:自動</string>
+    <string name="fan_manual">風扇狀態:手動</string>
+    <string-array name="data">
+        <item>室內pm1.0</item>
+        <item>室內pm2.5</item>
+        <item>室內pm10</item>
+        <item>室內濕度</item>
+        <item>室內溫度</item>
+        <item>風扇轉速</item>
+        <item>室外pm1.0</item>
+        <item>室外pm2.5</item>
+        <item>室外pm10</item>
+        <item>室外濕度</item>
+        <item>室外溫度</item>
+    </string-array>
+    <string-array name="menu1">
+        <item>室內pm1.0</item>
+        <item>室內pm2.5</item>
+        <item>室內pm10</item>
+        <item>室內濕度</item>
+        <item>室內溫度</item>
+        <item>風扇轉速</item>
+    </string-array>
+    <string-array name="menu2">
+        <item>室外pm1.0</item>
+        <item>室外pm2.5</item>
+        <item>室外pm10</item>
+        <item>室外濕度</item>
+        <item>室外溫度</item>
+    </string-array>
+    <string-array name="week">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+    <string-array name="date">
+        <item>本日</item>
+        <item>本週</item>
+        <item>本月</item>
+        <!--<item>測試</item>-->
+    </string-array>
+    <string-array name="clock">
+        <item>0時</item>
+        <item>1時</item>
+        <item>2時</item>
+        <item>3時</item>
+        <item>4時</item>
+        <item>5時</item>
+        <item>6時</item>
+        <item>7時</item>
+        <item>8時</item>
+        <item>9時</item>
+        <item>10時</item>
+        <item>11時</item>
+        <item>12時</item>
+        <item>13時</item>
+        <item>14時</item>
+        <item>15時</item>
+        <item>16時</item>
+        <item>17時</item>
+        <item>18時</item>
+        <item>19時</item>
+        <item>20時</item>
+        <item>21時</item>
+        <item>22時</item>
+        <item>23時</item>
+        <item>24時</item>
+    </string-array>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+        <Button
+                android:text="主要\n頁面"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="667dp"
+                tools:layout_editor_absoluteX="8dp" android:id="@+id/bt_main" android:layout_weight="1"
+                tools:ignore="ButtonStyle"
+                style="@style/Widget.AppCompat.Button.Borderless" android:textSize="18sp"/>
+        <Button
+                android:text="詳細\n資料"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="666dp"
+                tools:layout_editor_absoluteX="125dp" android:id="@+id/bt_data" android:layout_weight="1"
+                tools:ignore="ButtonStyle" style="@style/Widget.AppCompat.Button.Borderless" android:textSize="18sp"/>
+        <Button
+                android:text="控制\n設備"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="666dp"
+                tools:layout_editor_absoluteX="239dp" android:id="@+id/bt_contorl" android:layout_weight="1"
+                tools:ignore="ButtonStyle" style="@style/Widget.AppCompat.Button.Borderless" android:textSize="18sp"/>
+        <Button
+                android:text="設定\n勿擾"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="511dp"
+                tools:layout_editor_absoluteX="185dp" android:id="@+id/bt_setting" android:layout_weight="1"
+                tools:ignore="ButtonStyle" style="@style/Widget.AppCompat.Button.Borderless" android:textSize="18sp"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

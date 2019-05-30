@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="indoor_pm010">#5AA7B0</color>
+    <color name="indoor_pm025">#BFD5E2</color>
+    <color name="indoor_pm100">#C7EB50</color>
+    <color name="indoor_h">#DF885D</color>
+    <color name="indoor_t">#96E6B3</color>
+    <color name="fan_rs">#ED6A5A</color>
+    <color name="outdoor_pm010">#090CC0</color>
+    <color name="outdoor_pm025">#3066BE</color>
+    <color name="outdoor_pm100">#B4C5E4</color>
+    <color name="outdoor_h">#F3DE8A </color>
+    <color name="outdoor_t">#2299FF</color>
+    <color name="pm_excellent">#00E800</color>
+    <color name="pm_good">#FFF000</color>
+    <color name="pm_L_polluted">#FF7E00</color>
+    <color name="pm_M_polluted">#FF0000</color>
+    <color name="pm_H_polluted">#8F3F97</color>
+    <color name="pm_S_polluted">#7E0023</color>
+    <color name="no_color">#00000000</color>
+    <color name="dark_gray">#252525</color>
+</resources>

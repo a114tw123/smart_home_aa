@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <TextView
+            android:text="室內空氣品質與風扇轉速"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_title" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="4dp" android:layout_marginStart="4dp" android:textSize="18sp"/>
+    <TextView
+            android:text="單位:μg/m3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tv_left_unit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" app:layout_constraintStart_toStartOf="@+id/lc_item"
+            android:layout_marginLeft="4dp" android:layout_marginStart="4dp"/>
+    <TextView
+            android:text="單位:%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tv_right_unit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="4dp" android:layout_marginRight="4dp"/>
+    <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lc_item"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_right_unit"
+            android:layout_height="400dp"/>
+</android.support.constraint.ConstraintLayout>

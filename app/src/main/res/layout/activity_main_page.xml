@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".main_page">
+
+    <include layout="@layout/bot_bt"
+             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintVertical_bias="1.0"
+             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+             android:id="@+id/include" android:layout_height="wrap_content" android:layout_width="0dp"/>
+    <TextView
+            android:background="#ABA4B7"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_height="200dp" android:id="@+id/tv_pm010" android:layout_weight="1"
+            android:textSize="24sp" android:layout_width="0dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gd33"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.0" android:text="取得資料中"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/tv_pm010_updata" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gd33"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_pm010" android:gravity="center"/>
+    <TextView
+            android:text="pm1.0\n\n\n\nμg/m3"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/pm010" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gd33"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:textSize="18sp" android:visibility="invisible"/>
+    <TextView
+            android:background="#BCD3E0"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_height="200dp" android:id="@+id/tv_pm025" android:layout_weight="1"
+            android:textSize="24sp" android:layout_width="0dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_pm010"
+            app:layout_constraintEnd_toStartOf="@+id/gd67"
+            app:layout_constraintTop_toTopOf="parent" android:text="取得資料中"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/tv_pm025_updata" app:layout_constraintStart_toStartOf="@+id/gd33"
+            app:layout_constraintEnd_toStartOf="@+id/gd67"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_pm025" android:gravity="center"/>
+    <TextView
+            android:text="pm2.5\n\n\n\nμg/m3"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/pm025" app:layout_constraintStart_toStartOf="@+id/gd33"
+            app:layout_constraintEnd_toStartOf="@+id/gd67"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:textSize="18sp"
+            android:visibility="invisible"/>
+    <TextView
+            android:background="#C4E9EE"
+            android:gravity="center"
+            android:layout_height="200dp" android:id="@+id/tv_pm100" android:layout_weight="1"
+            android:textSize="24sp" android:layout_width="0dp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@+id/gd67"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:text="取得資料中"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/tv_pm100_updata" app:layout_constraintStart_toStartOf="@+id/gd67"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_pm100" android:gravity="center"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:text="pm10\n\n\n\nμg/m3"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/pm100" app:layout_constraintStart_toStartOf="@+id/gd67"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:textSize="18sp" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible"/>
+    <TextView
+            android:background="#BCC5AA"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_height="200dp" android:id="@+id/tv_h" android:layout_weight="1"
+            android:textSize="30sp" android:layout_width="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pm010"
+            app:layout_constraintEnd_toStartOf="@+id/gd50"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="取得資料中"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/tv_h_updata" app:layout_constraintStart_toStartOf="@+id/tv_h"
+            app:layout_constraintEnd_toStartOf="@+id/gd50"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_h" android:gravity="center"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"/>
+    <TextView
+            android:text="濕度\n\n\n\n%"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/h" app:layout_constraintStart_toStartOf="@+id/tv_h"
+            app:layout_constraintEnd_toStartOf="@+id/gd50"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="@+id/tv_h" android:textSize="18sp"
+            android:visibility="invisible"/>
+    <TextView
+            android:text="取得資料中"
+            android:background="#94E4B0"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_height="200dp" android:id="@+id/tv_t" android:layout_weight="1"
+            android:textSize="30sp" android:layout_width="0dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_h"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pm100"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/tv_t_updata" app:layout_constraintStart_toStartOf="@+id/gd50"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_t" android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:text="溫度\n\n\n\n°C"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/t" app:layout_constraintStart_toStartOf="@+id/gd50"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="@+id/tv_t" android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_t" android:visibility="invisible"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="64dp"
+            android:drawableRight="@drawable/indoor"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:id="@+id/bt_surr"
+            app:layout_constraintStart_toStartOf="parent" android:text="室內" android:background="#00000000"
+            app:layout_constraintTop_toBottomOf="@+id/tv_t" app:layout_constraintEnd_toEndOf="parent"/>
+
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/gd33"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent=".334"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/gd67"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent=".667"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/gd50"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent=".5"/>
+
+</android.support.constraint.ConstraintLayout>
