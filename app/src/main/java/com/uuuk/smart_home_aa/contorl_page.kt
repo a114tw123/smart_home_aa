@@ -36,6 +36,7 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
     var resumed=true
     var fan_state=true//t自動f手動
     var ac_state=true//t關閉f開啟
+    var fan_val = 0
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,24 +47,25 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
         bt_contorl.setOnClickListener(this)
         bt_setting.setOnClickListener(this)
         title="控制設備"
-        sb.isEnabled=false
+
         chart_init()
         set_bot_bt()
         chart_updata()
-
-        var fan_val=sb.progress
+        fan_init()
 
         bt_fan_sw.setOnClickListener {
             if (fan_state){
                 fan_state=!fan_state
                 bt_fan_sw.background=ContextCompat.getDrawable(this,R.drawable.fan_m)
-                tv_fan_val.text=resources.getString(R.string.fan_manual)+"\n"+fan_val
+                tv_fan_val.text=resources.getString(R.string.fan_manual)+"\n"+(sb.progress+1)
+                contorl_fan(sb.progress+1)
                 sb.isEnabled=true
             }
             else{
                 fan_state=!fan_state
                 bt_fan_sw.background=ContextCompat.getDrawable(this,R.drawable.fan_a)
                 tv_fan_val.text=resources.getString(R.string.fan_auto)
+                contorl_fan(0)
                 sb.isEnabled=false
             }
         }
@@ -84,8 +86,8 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                fan_val=progress
-                tv_fan_val.text=resources.getString(R.string.fan_manual)+"\n"+fan_val
+                fan_val=progress+1
+                tv_fan_val.text=resources.getString(R.string.fan_manual)+"\n"+(fan_val)
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
@@ -193,12 +195,12 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
         })
     }
     private fun contorl_fan(fan_val:Int){
-
+        val key="FyPda"
         val body= FormBody.Builder()
-            .add("","")
+            .add("speed",fan_val.toString())
             .build()
         val request= Request.Builder()
-            .url("http://piserv007.asuscomm.com:80/fb/send?key=FyPda")
+            .url("http://piserv007.asuscomm.com:80/set/stat/fan?key=$key")
             .post(body)
             .build()
         val call= OkHttpClient().newCall(request)
@@ -209,8 +211,51 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
             @SuppressLint("SetTextI18n")
             override fun onResponse(call: Call?, response: Response?) {
                 val res= JSONObject(response!!.body()!!.string())
-                runOnUiThread{
-                    sb.isEnabled=true
+                if (res.getBoolean("ok")){
+                    if(fan_val in 1..10){
+                        runOnUiThread{
+                            Handler().postDelayed({
+                                sb.isEnabled=true
+                            }, 500)
+                        }
+                    }
+                }
+            }
+        })
+    }
+    private fun fan_init(){
+        val key="FyPda"
+        val body= FormBody.Builder().build()
+        val request= Request.Builder()
+            .url("http://piserv007.asuscomm.com:80/get/stat/fan?key=$key")
+            .post(body)
+            .build()
+        val call= OkHttpClient().newCall(request)
+        call.enqueue(object : Callback {
+            override fun onFailure(call: Call?, e: IOException?) {
+                Log.d("post ", e.toString())
+            }
+            @SuppressLint("SetTextI18n")
+            override fun onResponse(call: Call?, response: Response?) {
+                val res= JSONObject(response!!.body()!!.string())
+                if (res.getBoolean("ok")){
+                    fan_val=res.getJSONObject("datas").getString("val").toInt()
+                    runOnUiThread {
+                        if (fan_val>0){//手動
+                            sb.progress=fan_val-1
+                            bt_fan_sw.background=ContextCompat.getDrawable(this@contorl_page,R.drawable.fan_m)
+                            tv_fan_val.text=resources.getString(R.string.fan_manual)+"\n"+(fan_val)
+                            sb.isEnabled=true
+                            fan_state=false
+                        }
+                        else{
+                            sb.progress=3
+                            bt_fan_sw.background=ContextCompat.getDrawable(this@contorl_page,R.drawable.fan_a)
+                            tv_fan_val.text=resources.getString(R.string.fan_auto)
+                            sb.isEnabled=false
+                            fan_state=true
+                        }
+                    }
                 }
             }
         })

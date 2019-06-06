@@ -41,7 +41,7 @@ class firebase_mes : FirebaseMessagingService() {
             builder=Notification.Builder(this)
         }
         builder.setSmallIcon(R.drawable.home)
-            .setContentTitle("Notification from Firebase")
+            .setContentTitle("超標通知")
             .setContentText(message)
             .setAutoCancel(true)
         manager.notify(0,builder.build())
