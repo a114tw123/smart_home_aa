@@ -154,10 +154,10 @@ class data_page : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                     if (checked){
-                        Toast.makeText(this, "你選擇的是${date_menu[date_scl]}$sb", Toast.LENGTH_SHORT).show()
+                        toast("你選擇的是${date_menu[date_scl]}$sb")
                     }
                     else{
-                        Toast.makeText(this, "未選擇資料", Toast.LENGTH_SHORT).show()
+                        toast("未選擇資料")
                     }
                 }
                 .setNegativeButton("上一步"){ _ , _ ->
@@ -205,10 +205,10 @@ class data_page : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                     if (checked){
-                        Toast.makeText(this, "你選擇的是${date_menu[date_scl]}$sb", Toast.LENGTH_SHORT).show()
+                        toast("你選擇的是${date_menu[date_scl]}$sb")
                     }
                     else{
-                        Toast.makeText(this, "未選擇資料", Toast.LENGTH_SHORT).show()
+                        toast("未選擇資料")
                     }
                 }
                 .setNegativeButton("上一步"){ _ , _ ->
@@ -430,6 +430,10 @@ class data_page : AppCompatActivity(), View.OnClickListener {
             lc.invalidate()
         }
 
+    }
+
+    private fun toast(message: CharSequence?, duration: Int = Toast.LENGTH_SHORT) {
+        Toast.makeText(this, message, duration).show()
     }
 
     inner class MyMarkerView(context: Context) : MarkerView(context, R.layout.markerview) {
