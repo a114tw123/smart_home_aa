@@ -39,7 +39,7 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
     var ac_state=true//t開啟f關閉
     var first=true
     var fan_val=0
-    var ac_val=0
+    var ac_val=20
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,14 +74,8 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
         }
 
         bt_ac_sw.setOnClickListener {
-            if (ac_state){
-                ac_state=!ac_state
-                ac_control(ac_state,ac_val)
-            }
-            else{
-                ac_state=!ac_state
-                ac_control(ac_state,ac_val)
-            }
+            ac_state=!ac_state
+            ac_control(ac_state,ac_val)
         }
 
         bt_ac_down.setOnClickListener {
@@ -197,8 +191,8 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
                     dataSet.colors = colors
                     dataSet.setDrawValues(false)
                     pc.clear()
-                    pc.centerText="風扇轉速"
-                    pc.setCenterTextSize(25f)
+                    pc.centerText="轉 速"
+                    pc.setCenterTextSize(20f)
                     pc.setTouchEnabled(false)
                     val description= Description()
                     description.text="更新時間 $time"
@@ -290,10 +284,9 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
 
     private fun fan_init(){
         val key="FyPda"
-        val body= FormBody.Builder().build()
         val request= Request.Builder()
             .url("http://piserv007.asuscomm.com:80/get/stat/fan?key=$key")
-            .post(body)
+            .get()
             .build()
         val call= OkHttpClient().newCall(request)
         call.enqueue(object : Callback {
@@ -328,10 +321,9 @@ class contorl_page : AppCompatActivity(), View.OnClickListener {
 
     private fun ac_init() {
         val key="FyPda"
-        val body= FormBody.Builder().build()
         val request= Request.Builder()
             .url("http://piserv007.asuscomm.com:80/get/stat/air?key=$key")
-            .post(body)
+            .get()
             .build()
         val call= OkHttpClient().newCall(request)
         call.enqueue(object : Callback {

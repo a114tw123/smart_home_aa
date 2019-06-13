@@ -380,44 +380,32 @@ class data_page : AppCompatActivity(), View.OnClickListener {
 
     @SuppressLint("SetTextI18n")
     private fun set_chart(dataset:LineDataSet,lc:LineChart,mid:Int,date_list:ArrayList<String>){
-
         for (i in date_list.indices){
             date_list[i]=date_list[i].replace("_","日")
         }
-
         val xAxis = lc.xAxis
         xAxis.setDrawGridLines(false)
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.granularity = 1f
         xAxis.valueFormatter = IndexAxisValueFormatter(date_list)
-
         val yAxisRight = lc.axisRight
         yAxisRight.granularity = 1f
         yAxisRight.axisMaximum=100f
         yAxisRight.axisMinimum=0f
-        if (mid==4||mid==6||mid==10){//將座摽對應至y軸右側
-            dataset.axisDependency= yAxisRight.axisDependency
-        }
+        if (mid==4||mid==6||mid==10) dataset.axisDependency= yAxisRight.axisDependency //將座摽對應至y軸右側
 
         val yAxisLeft = lc.axisLeft
         yAxisLeft.granularity = 1f
         if (mid==5||mid==11){//設定溫度上下限
-            yAxisLeft.axisMaximum=50f
-            yAxisLeft.axisMinimum=10f
+            yAxisLeft.axisMaximum=45f
+            yAxisLeft.axisMinimum=0f
         }
-
-
         dataset.setDrawValues(false)//不顯示數值
         dataset.lineWidth=2f
-
         lc.legend.isWordWrapEnabled=true//legend換行
         lc.marker=MyMarkerView(this)//點選時下方顯示數值
-
-        if(lc.data==null){
-            lc.data=LineData(dataset)
-        }
+        if(lc.data==null) lc.data=LineData(dataset)
         else lc.data.addDataSet(dataset)
-
         runOnUiThread{
             when(mid){
                 1,2,3,6->{tv_title.text="室內"+resources.getString(R.string.chart_title1)}
